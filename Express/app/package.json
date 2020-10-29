@@ -1,0 +1,12 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-dev": "^4.0.0"
+  },
+  "scripts": {
+    "start": "node-dev index.js"
+  }
+}

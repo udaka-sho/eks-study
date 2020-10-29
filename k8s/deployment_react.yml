@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react
+  labels:
+    app: front
+    env: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react
+  template:
+    metadata:
+      labels:
+        app: react
+    spec:
+      containers:
+      - name: react-container
+        imagePullPolicy: Never
+        image: react_test
+        ports:
+          - containerPort: 3000

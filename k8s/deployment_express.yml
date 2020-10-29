@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express
+  labels:
+    app: backend
+    env: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: express
+  template:
+    metadata:
+      labels:
+        app: express
+    spec:
+      containers:
+      - name: express-container
+        imagePullPolicy: Never
+        image: express_test
+        ports:
+          - containerPort: 8080

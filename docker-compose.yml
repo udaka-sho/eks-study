@@ -1,0 +1,14 @@
+version: '3'
+services:
+  react:
+    build: ./React
+    # volumes:
+    #   - ./React/app:/usr/src/app
+    ports:
+      - 3000:3000
+  express:
+    build: ./Express
+    # volumes:
+    #   - ./Express/app:/usr/src/app
+    ports:
+      - 8080:8080
