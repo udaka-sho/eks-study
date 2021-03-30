@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app
+  namespace: "default"
+spec:
+  selector:
+    matchLabels:
+      app: test-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - image: 946701551755.dkr.ecr.ap-northeast-1.amazonaws.com/test/docker-test:v1
+        imagePullPolicy: Always
+        name: test-app
+        ports:
+        - containerPort: 3000
+          protocol: TCP
